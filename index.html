@@ -1,373 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta property="og:type" content="Atla">
-    <meta property="og:title" content="Atla - Dynamic Consultancy">
-    <meta property="og:description"
-        content="Welcome to my portfolio site, where I'm excited to share my journey, skills, and the projects I've had the privilege to work on.">
-    <meta property="og:image" content="https://fransitsena.github.io/assets/img/about.jpg">
+  <base href="/college-connect">
 
-    <title>Atla - Dynamic Consultancy</title>
-    <meta name="title" content="Atla - Dynamic Consultancy">
-    <meta name="description"
-        content="Welcome to my portfolio site, where I'm excited to share my journey, skills, and the projects I've had the privilege to work on.">
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A new Flutter project.">
 
-    <!-- iOS meta tags & icons -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Atlabachew">
-    <link rel="apple-touch-icon" href="assets/img/logo.png">
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="college_connect">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/img/logo.png" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/styles.css">
+  <title>college_connect</title>
+  <link rel="manifest" href="manifest.json">
 
+  <script>
+    // The value below is injected by flutter build, do not touch.
+    var serviceWorkerVersion = "3844926927";
+  </script>
+  <!-- This script adds the flutter initialization JS code -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
 
-    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+  <script src="flutter.js" defer></script>
 </head>
-
 <body>
-    <header class="l-header">
-        <nav class="nav bd-grid">
-            <div>
-                <a href="#" class="nav__logo">Atla</a>
-            </div>
 
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list">
-                    <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
-                    <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-                    <li class="nav__item"><a href="#objective" class="nav__link">Objective</a></li>
-                    <li class="nav__item"><a href="#achievements" class="nav__link">Achievements</a></li>
-                    <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
-                    <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
-                    <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
-                    <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
-                </ul>
-            </div>
+  <script>
+    const firebaseConfig =  {
+      apiKey: "AIzaSyDn0utYMfbCjXpBPEqzL04sHJeMxlv7DVI",
+      authDomain: "college-connect-1.firebaseapp.com",
+      projectId: "college-connect-1",
+      storageBucket: "college-connect-1.appspot.com",
+      messagingSenderId: "401186886646",
+      appId: "1:401186886646:web:5e02f669bddeb070d0edd7",
+      measurementId: "G-RVRGX9B9L7"
+    };
 
-            <div class="nav__toggle" id="nav-toggle">
-                <i class='bx bx-menu'></i>
-            </div>
-        </nav>
-    </header>
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  
 
-    <main class="l-main">
-        <section class="home bd-grid" id="home">
-            <div class="home__data">
-                <h1 class="home__title"> Dr.<span class="home__title-color"> Atlabachew</span><br> Getaye <br><span style="font-size: 35px; font-weight: 400;">Dynamic Consultancy<br>and Training PLC</span></h1>
-
-                <a href="#contact" class="button">Contact</a>
-            </div>
-
-            <div class="home__social">
-                <a href="https://t.me/atlagetaye" class="home__social-icon"><i class='bx bxl-telegram'></i></a>
-                <a href="https://t.me/atlagetaye" class="home__social-icon"><i class='bx bxl-twitter'></i></a>
-            </div>
-
-            <div class="home__img">
-                <svg class="home__blob" viewBox="0 0 479 467" xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <mask id="mask0" mask-type="alpha">
-                        <path
-                            d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z" />
-                    </mask>
-                    <g mask="url(#mask0)">
-                        <path
-                            d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z" />
-                        <image class="home__blob-img" x="50" y="60" href="assets/img/perfil.png" />
-                    </g>
-                </svg>
-            </div>
-        </section>
-
-        <section class="about section " id="about">
-            <h2 class="section-title">About</h2>
-
-            <div class="about__container bd-grid">
-                <div class="about__img">
-                    <img src="assets/img/about.jpg" alt="">
-                </div>
-
-                <div>
-                    <h2 class="about__subtitle">I am Atlabachew.</h2>
-                    <p class="about__text">Welcome to my portfolio site, where I am excited to share my journey, skills and researches. I am always interested in the field of education and its potential to transform lives. I have been teaching for the last 22 years at Adama, Rift Valley, Saint Mary’s and Arsi universities, and published four English supplementary materials, two monographs and a poem. I also wrote and published 26 research articles which focused on teaching-learning, distance education, quality education, technology assisted learning and the environment. I gave training on active learning methods, classroom testing, lesson plan preparation, cheating, reading strategies, proposal writing, journal article writing, research methods, English for Secretary and Hotel English.</p>
-                </div>
-            </div>
-        </section>
-         <section class="objective section" id="objective">
-
-            <div class="about__container bd-grid">
-                <div>
-                    <h2 class="about__subtitle">Objective</h2>
-                    <p class="objective__text"> Dynamic Consultancy and Training PLC is set up by PhD holders who have been teaching and researching for more than 20 years. It is established to fill the gaps in the area of quality of education at primary, secondary and tertiary levels by offering training to students and teachers on learning and teaching, reading strategies, methodologies, testing, research, producing supplementary materials, supervising English teachers, and assessing quality of services of the teaching learning process. 
-                    </p>
-                </div>
-            </div>
-        </section>
-        
-        <section class="achievements section" id="achievements">
-
-            <div class="about__container bd-grid">
-                <div>
-                    <h2 class="about__subtitle">Achievements</h2>
-
-                    <p class="about__text"> During my journey as a teacher, I have accumulated many titles,
-                        certificates and letter of gratitude some of which include:
-                        <br>
-                        <br>PhD in TEFL
-                        <br>MA in Educational Research and Development
-                        <br>MA in TEFL
-                        </br>Took 10 Courses in Educational Planning and Management
-                        </br>Took 10 Courses in Sociology 
-                    </p>
-                </div>
-            </div>
-        </section>
-       <section class="skills section" id="skills">
-            <!-- <h2 class="section-title">Skills</h2>   -->
-
-            <div class="skills__container bd-grid">
-                <div>
-                    <h2 class="skills__subtitle">Profesional Skills</h2>
-                    <p class="skills__text"> My current role as consultant has been an enriching journey, allowing me with other staff members to contribute to a variety of educational problems that cover primary, secondary and tertiary levels such as training, material production, supervision and teachers’ rating and research.</p>
-
-                    <div class="skills__data">
-                        <div class="skills__names">
-                            <img class='s_icon' , src='assets/icons/pen.png'>
-                            <span class="skills__name">Material Production</span>
-                        </div>
-                        <div class="skills__bar skills__teaching">
-
-                        </div>
-                        <div>
-                            <span class="skills__percentage">100%</span>
-                        </div>
-                    </div>
-                    <div class="skills__data">
-                        <div class="skills__names">
-                            <img class='s_icon' , src='assets/icons/search.png'>
-                            <span class="skills__name">Researching</span>
-                        </div>
-                        <div class="skills__bar skills__researching">
-
-                        </div>
-                        <div>
-                            <span class="skills__percentage">100%</span>
-                        </div>
-                    </div>
-                    <div class="skills__data">
-                        <div class="skills__names">
-                            <img class='s_icon' , src='assets/icons/teaching.png'>
-                            <span class="skills__training">Training</span>
-                        </div>
-                        <div class="skills__bar skills__training">
-
-                        </div>
-                        <div>
-                            <span class="skills__percentage">100%</span>
-                        </div>
-                    </div>
-                    <div class="skills__data">
-                        <div class="skills__names">
-                            <img class='s_icon' , src='assets/icons/checkList.png'>
-                            <span class="skills__name">Strategic Planning and Supervision</span>
-                        </div>
-                        <div class="skills__bar skills__strategicPlanning">
-
-                        </div>
-                        <div>
-                            <span class="skills__percentage">100%</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <img src="assets/img/side.png" alt="" class="skills__img">
-                </div>
-            </div>
-        </section>
-
-        <section class="work section" id="work">
-            <h2 class="section-title">Work</h2>
-
-            <div class="work__container bd-grid">
-                <a href="./assets/img/work1.jpg" class="work__img">
-                    <img src="assets/img/work1.jpg" alt="st.mery university recommendation letter">
-                </a>
-                <a href="./assets/img/work2.jpg" class="work__img">
-                    <img src="assets/img/work2.jpg" alt="">
-                </a>
-                <a href="" class="work__img">
-                    <img src="assets/img/work3.jpg" alt="">
-                </a>
-                <a href="" class="work__img">
-                    <img src="assets/img/work4.jpg" alt="">
-                </a>
-                <a href="" class="work__img">
-                    <img src="assets/img/work5.jpg" alt="">
-                </a>
-                <a href="" class="work__img">
-                    <img src="assets/img/work6.jpg" alt="">
-                </a>
-            </div>
-
-            <div class="about__container bd-grid" style="gap: 15px;">
-                <div>
-                    <h2 class="about__subtitle">Technical Proficiency</h2>
-                    <p class="about__text">My expertise in teaching and learning allows me to bridge the
-                        gap in the field of education, ensuring that the solutions I create are not only
-                        efficient but also user-friendly.</p>
-                </div>
-                <div>
-                    <h2 class="about__subtitle">Problem Solving</h2>
-                    <p class="about__text">I thrive on solving complex problems, and am dedicated to finding innovative
-                        solutions that meet the specific needs of each package.</p>
-                </div>
-                <div>
-                    <h2 class="about__subtitle">Continuous Learner</h2>
-                    <p class="about__text">Education evolves rapidly, and I'm committed to staying up-to-date with the
-                        latest trends and tools in the field. This ensures that my skills are always relevant and
-                        adaptable.</p>
-                </div>
-                <div>
-                    <h2 class="about__subtitle">Time Management</h2>
-                    <p class="about__text">I always meet deadlines. There is no room for lame excuses.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="services section" id="services">
-            <h2 class="section-title">Services:</h2>
-            <div class="about__container bd-grid" style="row-gap: 10px; justify-items: start; text-align: start;">
-                <div>
-                    <h3 class="about__subtitle">Active Learning Techniques</h3>
-                </div>
-                <div>
-                    <h3 class="about__subtitle">Action Research</h3>
-                </div>
-                <div>
-                    <h3 class="about__subtitle">Research Methods</h3>
-                </div>
-                <div>
-                    <h3 class="about__subtitle">Classroom Testing</h3>
-                </div>
-                <div>
-                    <h3 class="about__subtitle">Study skills and reading strategies</h3>
-                </div>
-                <div>
-                    <h3 class="about__subtitle">How to teach speaking, writing, reading and listening</h3>
-                </div>
-                <div>
-                    <h3 class="about__subtitle">Producing English and Math supplementary materials</h3>
-                </div>
-                <div>
-                    <h3 class="about__subtitle">English teaching observation and rating</h3>
-                </div>
-                <div>
-                    <h3 class="about__subtitle">Hotel English</h3>
-                </div>
-                <div>
-                    <h3 class="about__subtitle">Proposal and report writing</h3>
-                </div>
-                <div>
-                    <h3 class="about__subtitle">English for Secretary</h3>
-                </div>
-                <div>
-                    <h3 class="about__subtitle">Editing</h3>
-                </div>
-                <div>
-                    <h3 class="about__subtitle">Quality Evaluation.</h3>
-                </div>
-            </div>
-        </section>
-
-
-        <section class="contact section" id="contact">
-            <h2 class="section-title">Contact</h2>
-
-            <div class="contact_wrap">
-
-                <div class="card">
-                    <center>
-                        <img src="assets/icons/phone.png" alt="phone png image" width="100">
-                        <div class="sizedBox"></div>
-                        <div class="regular_txt">
-                            Phone number
-                        </div>
-                        <div style="height: 10px;"></div>
-                        <a class="textButton" href="tel:+251931563906">
-                            <div class="emphasis">
-                                +251-931-563-906
-                            </div>
-                        </a>
-                        <div style="height: 10px;"></div>
-                        <a class="textButton" href="tel:0713987823">
-                            <div class="emphasis">
-                                +251-71-398-7823
-                            </div>
-                        </a>
-                    </center>
-                </div>
-                <div class="card">
-                    <center>
-                        <img src="assets/icons/telegram.png" alt="telegram png image" width="100">
-                        <div class="sizedBox"></div>
-                        <div class="regular_txt">
-                            Telegram
-                        </div>
-                        <div style="height: 10px;"></div>
-                        <a class="textButton" href="https://t.me/atlagetaye">
-                            <div class="emphasis">
-                                @atlagetaye
-                            </div>
-                        </a>
-                    </center>
-                </div>
-
-                <div class="card" style="width: 300px;">
-                    <center>
-                        <img src="assets/icons/mail.png" alt="mail png image" width="100">
-                        <div class="sizedBox"></div>
-                        <div class="regular_txt">
-                            Email
-                        </div>
-                        <div style="height: 10px;"></div>
-                        <a class="textButton" href="mailto:getaye.atlabachew@yahoo.com">
-                            <div class="emphasis">
-                                getaye.atlabachew@yahoo.com
-                            </div>
-                        </a>
-
-                    </center>
-                </div>
-
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <p class="footer__title">Atlabachew</p>
-        <div class="footer__social">
-            <a href="#" class="footer__icon"><i class='bx bxl-facebook'></i></a>
-            <a href="https://www.instagram.com/Atlabachewistaken/" class="footer__icon"><i
-                    class='bx bxl-instagram'></i></a>
-            <a href="#" class="footer__icon"><i class='bx bxl-twitter'></i></a>
-        </div>
-
-    </footer>
-
-
-    <script src="https://unpkg.com/scrollreveal"></script>
-
-
-    <script src="assets/js/main.js"></script>
+  <script>
+    window.addEventListener('load', function(ev) {
+      // Download main.dart.js
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        },
+        onEntrypointLoaded: function(engineInitializer) {
+          engineInitializer.initializeEngine().then(function(appRunner) {
+            appRunner.runApp();
+          });
+        }
+      });
+    });
+  </script>
 </body>
-
 </html>
